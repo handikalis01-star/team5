@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanaman Sekitar SMKN 10 Semarang</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #4170ce;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .card:hover {
+      background: #e0f2f1;
+      transform: translateY(-3px);
+    }
+    a {
+      text-decoration: none;
+      color: #461ac0;
+      font-weight: bold;
+      display: block;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #67a8d1;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tanaman SMKN 10 Semarang</h1>
+  </header>
+
+  <div class="container">
+    <div class="grid" id="plantGrid"></div>
+  </div>
+
+  <footer>
+    &copy; 2025 SMKN 10 Semarang
+  </footer>  
+
+  <script>
+    const plants = [
+      { name: "Song of India", file:"songofindia.html" },
+      { name: "Tanaman Jeruk", file: "jeruk.html" },
+      { name: "Tanaman Blanceng", file: "blanceng.html" },
+      { name: "Jambu Biji", file: "jambu_biji.html" },
+      { name: "Matoa", file: "matoa.html" },
+      { name: "Beringin Kecil", file: "beringinkecil.html" },
+      { name: "Ketapang Kencana", file: "ketapangkencana.html" }
+    ];
+
+    const grid = document.getElementById("plantGrid");
+
+    plants.forEach(plant => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `<a href="${plant.file}">${plant.name}</a>`;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
+
+
